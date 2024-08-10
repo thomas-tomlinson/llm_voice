@@ -1,0 +1,8 @@
+mlx
+sounddevice
+lightning-whisper-mlx
+rich
+sh
+numpy
+ollama
+hf_transfer
