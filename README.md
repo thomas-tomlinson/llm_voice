@@ -21,7 +21,7 @@ How to use this
 
 The first time you run this, there will be a lot of downloads involved so be patient.  Once it's ready you'll
 be prompted to his the enter key to start recording.  There's a wake word of "computer" that triggers the STT process and 
-after a very poorly implemented "no more talking", the prompt will be submitted to the LLM.  There's some debugging still in
+after a basic VAD process, the prompt will be submitted to the LLM.  There's some debugging still in
 place that you are of course free to disable / remove / change etc.
 
 Lessons Learned thus far
@@ -31,9 +31,10 @@ Lessons Learned thus far
 * This guys whisper MLX implementation is amazing: https://github.com/mustafaaljadery/lightning-whisper-mlx
 * even non MLX, ollama is pretty damn cool.
 * I had no idea that apple had some many additional voices that work under the `say` command (https://support.apple.com/en-gb/guide/mac-help/mchlp2290/mac#:~:text=and%20speaking%20rate.-,add%20a%20new%20voice,-You%20can%20add)
+* I made my own ringbuffer class as there is not a python native one.  It's specific to this use case but I learned a few things from it.
 
 Directions I may learn next
 --------------------------
-* implement a proper VAD (Voice Activity Detection) algorithm.  I'd like to avoid the blanket 2 second sleep to try and catch an actual phrase.
+* ~~implement a proper VAD (Voice Activity Detection) algorithm.  I'd like to avoid the blanket 2 second sleep to try and catch an actual phrase.~~
 * explore some other TTS solutions.
 * summarize and prune the chat history.  right now it just endlessly appends which is not a great long term solution.

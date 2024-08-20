@@ -6,3 +6,4 @@ sh
 numpy
 ollama
 hf_transfer
+webrtcvad
